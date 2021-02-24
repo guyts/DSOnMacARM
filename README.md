@@ -11,6 +11,25 @@ Once you do that, you can install Homebrew using Rosetta and get access to most 
 
 Note that not everything compiles in Rosetta and you should be wary of it. I have not tested the world of software but of note, Docker is one of the most prominent examples that will not work with Rosetta. Scroll down to the very last section to see the list of all programs that won't work at all.
 
+## After setting up Rosetta Terminal
+
+Now, one can [download the Anaconda](https://www.anaconda.com/products/individual) installation for MacOS (intel version, not the ARM), and install via zsh. 
+You might need to fix some settings, [here's one](https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-390216875) that worked for me to fix "Insecure Completion" warning
+
+### Install on Rosetta Terminal
+
+1. On your *Rosetta Terminal*, run `chmod +x ./[shell script name].sh` to make sure it can be run for all users (see [reference here](https://stackoverflow.com/questions/53229221/terminal-error-zsh-permission-denied-startup-sh)
+2. Run the zsh script with `~/.[shell script name].sh`
+3. Anaconda should install after your confirming location (keep as default) and T&C.
+
+### Enabling Anaconda on zsh
+
+After installation you will see the desired conda `base` in your terminal; However after restarting Terminal, it will not autoload. To do so:
+
+1. Run on your terminal: `source <path to conda>/bin/activate`
+2. Initialize conda by running `conda init zsh`
+3. Close the terminal and restart, to make sure it is now loaded by default with Anaconda
+
 ---
 
 # Homebrew & Apple Command Line Tools
